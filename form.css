@@ -1,0 +1,87 @@
+@font-face {
+    font-family: 'Oswald';
+    src: url('fonts/Oswald-Regular.ttf') format('truetype');
+    font-family: 'Pixel';
+    src: url("fontes/Pixel.ttf");
+}
+
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+html {
+    height: 100%;
+    --background: #09719b;
+    --text: black;
+    --cano1: #406DA8;
+    --cano2: #406DA8;
+}
+
+body {
+    background-color: var(--background);
+}
+
+img {
+    width: 50px;
+    height: 50px;
+}
+
+header {
+    color: #204959;
+    min-height: 100px;
+    text-align: center;
+    padding-top: 40px;
+}
+
+header h1 {
+    color: #0D9FD9;
+    font-family: var(--fontDestaque);
+    margin-bottom: 20px;
+    font-size: 2em;
+}
+
+main {
+    min-width: 200px;
+    max-width: 800px;
+    margin: auto;
+    margin-bottom: 30px;
+    background-color: rgb(239, 244, 255);
+    color: #0A7AA6;
+    padding: 20px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.562);
+    border-radius: 0px 0px 20px 20px;
+    font-size: 1.1em;
+}
+
+.butt {
+    background-color: lightblue;
+    color: #204959;
+    font-size: 0.9em;
+    padding: 5px;
+    border-radius: 10px;
+    margin-left: 120px;
+}
+
+.name {
+    border-radius: 5px;
+    border-color: grey;
+    height: 25px;
+    padding-left: 10px;
+    padding-bottom: 3px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 0.9em;
+    border-width: 1px;
+}
+
+.escolha {
+    margin-left: 50px;
+}
+
+.choice {
+    padding: 5px;
+    border-radius: 5px;
+    margin-left: 30px;
+    border-color: rgb(148, 147, 147);
+    width: 200px;
+}

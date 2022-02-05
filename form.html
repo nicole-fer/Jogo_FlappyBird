@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario</title>
+    <link rel="stylesheet" href="form.css">
+</head>
+
+<body>
+    <main>
+        <header>
+            <h1>Configurações do Jogo
+                <img src="img/3933c213d43ed004e381fefdb9ec0605_w200.gif" alt="gif">
+            </h1>
+
+        </header>
+
+        <form name="dados" action="index.html">
+            <!-- Nome do Jogador -->
+            <label>Nome do Jogador:</label><br>
+            <input type="text" name="cenome" id="cenome" size="50" placeholder="Insira seu nome aqui..." class="name">
+            <br><br>
+
+            <!-- Cenario do jogo -- Noturno/Diurno -->
+            <label>Cenário do Jogo:</label><br>
+            <input value="noite" type="radio" name="cenario" id="ceNoturno" class="escolha" onclick=" "> Noturno
+            <input value="dia" type="radio" name="cenario" id="cenDiurno" class="escolha" onclick=" "> Diurno
+            <br><br>
+
+            <!-- Intervalo entre a abertura dos canos --- Facil/Medio/Dificil -->
+            <label>Intervalo Entre a abertura dos Canos: </label><br>
+            <input value="aberturaF" type="radio" name="canos" class="escolha" onclick=" "> Fácil
+            <input value="aberturaM" type="radio" name="canos" class="escolha" onclick=" "> Médio
+            <input value="aberturaD" type="radio" name="canos" class="escolha" onclick=" "> Difícil
+            <br><br>
+
+            <!-- Distância entre os canos --- Facil/Medio/Dificil -->
+            <label>Distância entre os canos: </label><br>
+            <input value="distanciaF" type="radio" name="distancia" onclick=" " class="escolha"> Fácil
+            <input value="distanciaM" type="radio" name="distancia" onclick=" " class="escolha"> Médio
+            <input value="distanciaD" type="radio" name="distancia" onclick=" " class="escolha"> Difícil
+            <br><br>
+
+            <!-- Velocidade do Jogo, varia entre 1 e 10 -->
+            <label>Velocidade do Jogo: </label> <br>
+            <select name="velocidade" id="velocidade" class="choice"> 
+            <option selected > Escolha...         
+                <option name ="speed" value="1">1x</option>
+                <option name="speed" value="2">2x</option>
+                <option name="speed" value="3">3x</option>
+                <option name="speed" value="4">4x</option>
+                <option name="speed" value="5">5x</option>
+                <option name="speed" value="6">6x</option>
+                <option name="speed" value="7">7x</option>
+                <option name="speed" value="8">8x</option>
+                <option name="speed" value="9">9x</option>
+                <option name="speed" value="10">10x
+                </option></select>
+            <br><br>
+
+            <!-- Personagens, tres opcoes, flip bird/pica-pau/ -->
+            <label>Personagens:</label> <br>
+            <select name="personagens" id="personagens" class="choice"> 
+                  <option selected > Escolha...
+                      <option name="person" value="flip">Flip Bird</option>
+                      <option name="person" value="pica">Pica Pau</option>
+                      <option name="person" value="piupiu">Piu Piu</option>
+                    </select>
+            <br><br>
+
+            <!-- Tipo do Jogo, treino/real -->
+            <label>Tipo do Jogo: </label><br>
+            <input value="tipoT" type="radio" name="tipo" class="escolha" onclick=" "> Treino
+            <input value="tipoR" type="radio" name="tipo" class="escolha" onclick=" "> Real
+            <br><br>
+
+
+            <!-- Velocidade do Personagem, baixa/media/alta -->
+            <label>Velocidade do Personagem: </label><br>
+            <input value="velB" type="radio" name="velPers" class="escolha" onclick=" "> Baixa
+            <input value="velM" type="radio" name="velPers" class="escolha" onclick=" "> Média
+            <input value="velD" type="radio" name="velPers" class="escolha" onclick=" "> Alta
+            <br><br>
+
+
+            <!-- Pontuação, 1/10/100 -->
+            <label>Pontuação: </label><br>
+            <input value="pont1" type="radio" name="pontuacao" class="escolha" onclick=" "> 1
+            <input value="pont10" type="radio" name="pontuacao" class="escolha" onclick=" "> 10
+            <input value="pont100" type="radio" name="pontuacao" class="escolha" onclick=" "> 100
+            <br> <br><br>
+
+            <!-- Botoes, salvar/ deletar os dados e jogar que direciona pra pag do jogo -->
+            <input type="button" value="Salvar Dados" class="butt " onclick="save()">
+            <input type="button" value="Apagar Dados" class="butt " onclick="delet()">
+            <a href="index.html ">
+                <input type="button" value="Gravar" class="butt" onclick="passValue()">
+            </a> <br>
+        </form>
+    </main> <br> <br> <br>
+    <!-- ---------  Fim das configurações de form para HTML --------- -->
+    <!-- ---------  Inicio das configurações de form para java script --------- -->
+
+    <script>
+        function save() { //salva os dados do formulario
+            //<!-- Nome do Jogador -->
+            localStorage.nome = document.getElementById('cenome').value
+
+            //<!-- Cenario do jogo -- Noturno/Diurno -->
+            localStorage.cenario = document.querySelector('input[name="cenario"]:checked').value
+
+            //<!-- Intervalo entre a abertura dos canos --- Facil/Medio/Dificil -->
+            localStorage.abertura = document.querySelector('input[name="canos"]:checked').value
+
+            //<!-- Distância entre os canos --- Facil/Medio/Dificil -->
+            localStorage.distancia = document.querySelector('input[name="distancia"]:checked').value
+
+            //<!-- Velocidade do Jogo, varia entre 1 e 10 -->
+            localStorage.velocidade = document.querySelector('option[name="speed"]:checked').value
+
+            //<!-- Personagens, tres opcoes, flip bird/pica-pau/ -->
+            localStorage.personagem = document.querySelector('option[name="person"]:checked').value
+
+            //<!-- Tipo do Jogo, treino/real -->
+            localStorage.tipoDeJogo = document.querySelector('input[name="tipo"]:checked').value
+
+            //<!-- Velocidade do Personagem, baixa/media/alta -->
+            localStorage.velocidadePersonagem = document.querySelector('input[name="velPers"]:checked').value
+
+            //<!-- Pontuação, 1/10/100 -->
+            localStorage.pontos = document.querySelector('input[name="pontuacao"]:checked').value
+        }
+
+        function delet() {
+            window.localStorage.clear()
+        }
+    </script>
+</body>
+
+</html>
